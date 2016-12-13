@@ -55,6 +55,8 @@ names(limitedFocus_x)<-gsub("Mag", "Magnitude", names(limitedFocus_x))
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tidy <- cbind(Subject = merged_subjects, Activity = merged_activities, limitedFocus_x)
 names(tidy)[1:2]<-c("Subject", "Activity")
+copy_book<-names(tidy)
 
 #Create a file with the new tidy data
-write.table(tidyMeans, "tidyMeans.txt", row.names = FALSE)
+write.table(tidy, "tidyData.txt", row.names = FALSE)
+write.table(copy_book, "copy_book.txt", row.names = FALSE)
