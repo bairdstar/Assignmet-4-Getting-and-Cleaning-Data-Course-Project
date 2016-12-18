@@ -1,4 +1,5 @@
 Field headers (below) in the tidyData.txt file represent average (mean) values for each subject in the Samsung study based on the type of activity:
+
 "Subject"
 "Activity"
 "TimeBodyAccelerometerMeanX"
