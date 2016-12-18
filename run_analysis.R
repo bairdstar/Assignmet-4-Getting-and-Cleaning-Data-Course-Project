@@ -57,6 +57,13 @@ tidy <- cbind(Subject = merged_subjects, Activity = merged_activities, limitedFo
 names(tidy)[1:2]<-c("Subject", "Activity")
 copy_book<-names(tidy)
 
+#Create factor to group subjects
+tidy$Subject <- as.factor(tidy$Subject)
+tidy <- data.table(tidy)
+
+#Create tidy data as a set with mean by subject and activity
+tidy <- aggregate(. ~Subject + Activity, tidy, mean)
+
 #Create a file with the new tidy data
 write.table(tidy, "tidyData.txt", row.names = FALSE)
 write.table(copy_book, "copy_book.txt", row.names = FALSE)
