@@ -67,4 +67,4 @@ tidyData<-tidy[order(tidy$Subject,tidy$Activity),]
 
 #Create a file with the new tidy data
 write.table(tidyData, "tidyData.txt", row.names = FALSE)
-write.table(copy_book, "copy_book.txt", row.names = FALSE)
+write.table(copy_book, "copybook.txt", row.names = FALSE)
